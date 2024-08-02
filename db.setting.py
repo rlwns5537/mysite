@@ -1,26 +1,26 @@
 import pymysql
-import pymysql.cursors
+import pymysql.cursors 
 
 _db = pymysql.connect(
-    host= 'rlwns5537.mysql.pythonanywhere-services.com',
-    port = 3306,
-    user = 'rlwns5537',
-    password = 'jyh5537!!',
+    host = 'rlwns5537.mysql.pythonanywhere-service.com', 
+    port = 3306, 
+    user = 'rlwns5537', 
+    password = 'jyh5537!!', 
     db = 'rlwns5537$ubion'
 )
 
 # cursor 생성
 cursor = _db.cursor(pymysql.cursors.DictCursor)
 
-#table 생성 쿼리문
+# table 생성 쿼리문 
 create_user = """
-    create table 
-    if exists
+    create table  
+    if not exists 
     user (
     id varchar(32) primary key,
-    password varchar(64) not null,
+    password varchar(64) not null, 
     name varchar(32) not null
-    ) 
+    )
 """
 
 # sql 쿼리문을 실행 
